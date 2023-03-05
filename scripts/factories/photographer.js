@@ -1,9 +1,11 @@
 function photographerFactory(data) {
+    console.log("entrée dans la factory");
     const { name, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
+        console.log("création de l'objet html dom");
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture)
