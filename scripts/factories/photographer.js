@@ -27,6 +27,9 @@ function photographerFactory(data) {
         article.appendChild(h3);
         article.appendChild(h4);
         article.appendChild(h5);
+        // ajout evemenent click qui appelle la fonction qui change de page
+        // on passe l'id du photographe
+        article.addEventListener("click",() => { linkPhotographer(id) }); 
         return (article);
     }
     return { name, picture, getUserCardDOM }

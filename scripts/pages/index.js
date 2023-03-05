@@ -32,6 +32,12 @@
         });
     };
 
+    function linkPhotographer(id){
+        // On replace l'url pour changer la page
+        // on lui envoie l'id du photographe choisi
+        document.location = "photographer.html?id="+id;
+    }
+
     async function init() {
         // Récupère les datas des photographes
         // getPhotographers retourne un json { photographers: [..] }et on veut juste
