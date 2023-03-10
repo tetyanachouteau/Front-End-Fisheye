@@ -32,5 +32,17 @@ function photographerFactory(data) {
         article.addEventListener("click",() => { linkPhotographer(id) }); 
         return (article);
     }
+
+    //page phot. html, das factory.js
+    profilCardDOM(){
+        const { name,  portrait, city, tagline,country }= data;
+        //2 interpolation 
+        return `
+        <article><h2>${city}</aricle>;
+
+        `
+     }
     return { name, picture, getUserCardDOM }
+
+
 }

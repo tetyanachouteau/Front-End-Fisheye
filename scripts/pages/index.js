@@ -17,6 +17,7 @@
         console.log("data en text: \n" + JSON.stringify(photographers));
         return photographers;
     }
+    //pour c fts appele la fonction factory pour afficher des donner de chaque f en utilisant d'autres f comme getUser Dom
 
     async function displayData(photographers) {
         console.log("On récupère la div dans le html");
