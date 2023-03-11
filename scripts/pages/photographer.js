@@ -28,6 +28,7 @@ async function createProfilCardDom() {
         // ajout dans cette div le code html 
         profileSection.appendChild(profileCardDom[0]);
         profileSection.appendChild(profileCardDom[1]);
+        profileSection.appendChild(profileCardDom[2]);
 
     } else {
         // si pas d'id on retourne sur la page d'acceuil

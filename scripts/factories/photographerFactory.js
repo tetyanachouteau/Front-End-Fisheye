@@ -35,8 +35,6 @@ function photographerFactory(data) {
 
     //page phot. html, das factory.js
     function profilCardDOM(){
-        const { name, portrait, city, tagline, country } = data;
-
         // créer la div profile du photographe
         // avec la bonne classe
         const profile = document.createElement('div');
@@ -63,7 +61,18 @@ function photographerFactory(data) {
         img.setAttribute("alt", "Photo de " + name);
         photo.appendChild(img);
 
-        return [profile, photo];
+        // créer la div du prix du photographe et likes
+        // elle a la classe associée
+        const encart = document.createElement('div');
+        encart.className = 'photographer-encart';
+        const likes = document.createElement('span');
+        likes.textContent = "1000 ♥"
+        const prix = document.createElement('span');
+        prix.textContent = price + "€/jour"
+        encart.appendChild(likes);
+        encart.appendChild(prix);
+
+        return [profile, photo, encart];
     }
     return { name, picture, getUserCardDOM, profilCardDOM }
 
