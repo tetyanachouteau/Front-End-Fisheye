@@ -81,6 +81,21 @@
     order: 2;
 }
 
+.photograph-filtrage {
+    margin: 20px 100px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.photograph-filtrage select {
+    background-color: #901C1C;
+    font-size: 18px;
+    color: #FFF;
+    height: 60px;
+    width: 170px;
+    border-radius: 5px;
+}
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
