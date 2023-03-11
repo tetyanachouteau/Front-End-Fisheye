@@ -30,6 +30,29 @@ async function createProfilCardDom() {
         profileSection.appendChild(profileCardDom[1]);
         profileSection.appendChild(profileCardDom[2]);
 
+        let photos;
+        // récupère les photos du photographe
+        await fetch('data/photos-' + id + '.json')
+            .then(function (response) {
+                console.log(response)
+                return response.json();
+            })
+            .then(function (json) {
+                // on filtre le tableau des photographes pour récupérer celui qui à l'id de la page
+                // ensuite on recupère le permier element trouvé (normalement le seul)
+                photos = json.photos;
+            });
+
+        photos.forEach((photo) => {
+            // créer un objet photographerModel à partir de l'usine avec les données
+            const mediaModel = mediaFactory(photo);
+            // créer le html en mémoire : un tableau qui contient les deux div
+            const photoCardDom = mediaModel.getPhotoCardDOM();
+            // récupère la div photograph-header
+            const photosSection = document.querySelector(".photograph-photos");
+            // ajout le html à la section
+            photosSection.appendChild(photoCardDom);
+        });
     } else {
         // si pas d'id on retourne sur la page d'acceuil
         document.location = "index.html";

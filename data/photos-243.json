@@ -1,0 +1,74 @@
+{
+    "photos": [
+        {
+            "id": 1,
+            "title": "Arc-en-ciel",
+            "likes": 11,
+            "author": 243,
+            "name": "Animals_Rainbow.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Benevides Weeding",
+            "likes": 12,
+            "author": 243,
+            "name": "Event_BenevidesWedding.jpg"
+        },
+        {
+            "id": 3,
+            "title": "P into Weeding",
+            "likes": 12,
+            "author": 243,
+            "name": "Event_PintoWedding.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Seaside",
+            "likes": 11,
+            "author": 243,
+            "name": "Event_SeasideWedding.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Portait",
+            "likes": 11,
+            "author": 243,
+            "name": "Portrait_Background.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Nora",
+            "likes": 11,
+            "author": 243,
+            "name": "Portrait_Nora.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Wednesday",
+            "likes": 11,
+            "author": 243,
+            "name": "Portrait_Wednesday.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Hillside",
+            "likes": 11,
+            "author": 243,
+            "name": "Travel_HillsideColor.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Lonesome",
+            "likes": 11,
+            "author": 243,
+            "name": "Travel_Lonesome.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Horses",
+            "likes": 11,
+            "author": 243,
+            "name": "Animals_Wild_Horses_in_the_mountains.mp4"
+        }
+    ]
+}
