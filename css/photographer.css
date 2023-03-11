@@ -2,10 +2,53 @@
     display: none;
 }
 
+.photographer-profile {
+    order: 1;
+}
+
+.photographer-photo {
+    order: 3;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.photograph-header h2 {
+    color: #D3573C;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 83px;
+    margin: 0;
+}
+
+.photograph-header h3 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    color: #901C1C;
+    margin: 0;
+}
+
+.photograph-header h4 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: #525252;
+    margin: 0;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
 }
 
 .contact_button {
@@ -19,6 +62,7 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    order: 2;
 }
 
 .modal {

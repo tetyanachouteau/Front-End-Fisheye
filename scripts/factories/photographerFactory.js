@@ -37,7 +37,10 @@ function photographerFactory(data) {
     function profilCardDOM(){
         const { name, portrait, city, tagline, country } = data;
 
+        // créer la div profile du photographe
+        // avec la bonne classe
         const profile = document.createElement('div');
+        profile.className = 'photographer-profile';
         const h2 = document.createElement('h2');
         h2.textContent = name;
         h2.setAttribute('aria-label', 'nom du photographe')
@@ -51,13 +54,16 @@ function photographerFactory(data) {
         profile.appendChild(h3);
         profile.appendChild(h4);
         
-        const user = document.createElement('div');
+        // créer la div de la photo du photographe
+        // elle a la classe associée
+        const photo = document.createElement('div');
+        photo.className = 'photographer-photo';
         const img = document.createElement('img');
         img.setAttribute("src", picture)
         img.setAttribute("alt", "Photo de " + name);
-        user.appendChild(img);
+        photo.appendChild(img);
 
-        return [profile, user];
+        return [profile, photo];
     }
     return { name, picture, getUserCardDOM, profilCardDOM }
 
