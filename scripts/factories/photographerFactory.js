@@ -36,10 +36,28 @@ function photographerFactory(data) {
     //page phot. html, das factory.js
     function profilCardDOM(){
         const { name, portrait, city, tagline, country } = data;
-        //2 interpolation 
-        return `
-        <article><h2>${city}</aricle>
-        `
+
+        const profile = document.createElement('div');
+        const h2 = document.createElement('h2');
+        h2.textContent = name;
+        h2.setAttribute('aria-label', 'nom du photographe')
+        const h3 = document.createElement('h3');
+        h3.textContent = city + ", " + country;
+        h2.setAttribute('aria-label', 'adresse du photographe')
+        const h4 = document.createElement('h4');
+        h4.textContent = tagline;
+        h2.setAttribute('aria-label', 'citation du photographe')
+        profile.appendChild(h2);
+        profile.appendChild(h3);
+        profile.appendChild(h4);
+        
+        const user = document.createElement('div');
+        const img = document.createElement('img');
+        img.setAttribute("src", picture)
+        img.setAttribute("alt", "Photo de " + name);
+        user.appendChild(img);
+
+        return [profile, user];
     }
     return { name, picture, getUserCardDOM, profilCardDOM }
 
