@@ -7,7 +7,7 @@ async function createProfilCardDom() {
     const id = params.get("id")
     // si l'id existe dans l'url
     if (id) {
-        let photographer;
+        let photographer, photos;
         // récupère les données photographe
         await fetch('data/photographers.json')
             .then(function (response) {
@@ -18,6 +18,8 @@ async function createProfilCardDom() {
                 // on filtre le tableau des photographes pour récupérer celui qui à l'id de la page
                 // ensuite on recupère le permier element trouvé (normalement le seul)
                 photographer = json.photographers.filter(el => el.id == id)[0];
+                // récupère les photos du photographe en filtrant par son id et tiré par like
+                photos = json.media.filter(el => el.photographerId == id).sort((a,b) => b.likes - a.likes);
             });
         // créer un objet photographerModel à partir de l'usine avec les données
         const photographerModel = photographerFactory(photographer);
@@ -29,19 +31,6 @@ async function createProfilCardDom() {
         profileSection.appendChild(profileCardDom[0]);
         profileSection.appendChild(profileCardDom[1]);
         profileSection.appendChild(profileCardDom[2]);
-
-        let photos;
-        // récupère les photos du photographe
-        await fetch('data/photos-' + id + '.json')
-            .then(function (response) {
-                console.log(response)
-                return response.json();
-            })
-            .then(function (json) {
-                // on filtre le tableau des photographes pour récupérer celui qui à l'id de la page
-                // ensuite on recupère le permier element trouvé (normalement le seul)
-                photos = json.photos;
-            });
 
         photos.forEach((photo) => {
             // créer un objet photographerModel à partir de l'usine avec les données
