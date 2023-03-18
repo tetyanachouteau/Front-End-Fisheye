@@ -31,26 +31,26 @@
 			<div class="modal">
 				<header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <img src="assets/icons/close.svg" alt="Close button" aria-roledescription="Close button" onclick="closeModal()" />
         </header>
-				<form>
+				<form id="contactForm">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstname">Prénom</label>
+						<input type="text" name="firstname" required/>
 					</div>
           <div>
-						<label>Nom</label>
-						<input />
+						<label for="lastname">Nom</label>
+						<input type="text" name="lastname" required/>
 					</div>
           <div>
-						<label>Email</label>
-						<input type="email"/>
+						<label for="email">Email</label>
+						<input type="text" name="email" type="email" required/>
 					</div>
           <div>
-						<label>Votre message</label>
-						<textarea></textarea>
+						<label for="message">Votre message</label>
+						<textarea name="message" required></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <input class="contact_button" type="submit" value="Envoyer" />
 				</form>
 			</div>
 		</div>

@@ -50,5 +50,3 @@ async function createProfilCardDom() {
 //Mettre le code JavaScript lié à la page photographer.html
 
 createProfilCardDom()
-
- //faire module et mporter fFactory from ...

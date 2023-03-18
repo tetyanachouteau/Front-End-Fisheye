@@ -15,8 +15,6 @@ function mediaFactory(data) {
         }else{
             const media = `assets/images/${photographerId}/${video}`;
             const videotag = document.createElement('video');
-            videotag.setAttribute("width", "350px")
-            videotag.setAttribute("height", "300px");
             videotag.setAttribute("controls", "true");
             const source = document.createElement("source");
             source.setAttribute("src",media);
