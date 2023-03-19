@@ -1,4 +1,4 @@
-function mediaFactory(data) {
+function mediaFactory(data, index) {
     console.log("entrée dans la factory");
 
     const { id, photographerId, title, image, video, likes, date, price } = data;
@@ -6,23 +6,37 @@ function mediaFactory(data) {
     function getPhotoCardDOM() {
         console.log("création de l'objet html dom");
         const figure = document.createElement('figure');
-        if(image){
+        if (image) {
             const media = `assets/images/${photographerId}/${image}`;
             const img = document.createElement('img');
-            img.setAttribute("src", media)
+            // grace au dataset on passe à l'image son index dans le 
+            // tableau des photos
+            img.dataset.key = index;
+            img.setAttribute("src", media);
             img.setAttribute("alt", title);
+            // Pointeur fonction displayLightbox
+            // si pas de valeur d'index on est en adffichage unique
+            // donc on ajoute pas l'evenement click
+            if (index)
+                img.addEventListener("click", displayLightbox);
             figure.appendChild(img);
-        }else{
+        } else {
             const media = `assets/images/${photographerId}/${video}`;
             const videotag = document.createElement('video');
             videotag.setAttribute("controls", "true");
+            // grace au dataset on passe à la video son index dans le 
+            // tableau des photos
+            videotag.dataset.key = index;
+            // Pointeur fonction displayLightbox
+            if (index)
+                videotag.addEventListener("click", displayLightbox);
             const source = document.createElement("source");
-            source.setAttribute("src",media);
+            source.setAttribute("src", media);
             source.setAttribute("type", "video/mp4");
             videotag.appendChild(source);
             figure.appendChild(videotag);
         }
-        
+
         const figcaption = document.createElement("figcaption")
         const spanTitle = document.createElement('span');
         spanTitle.textContent = title;

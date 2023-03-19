@@ -2,7 +2,7 @@ function displayModal() {
     console.log("ouvre la modale");
     const modal = document.getElementById("contact_modal");
     modal.setAttribute("aria-hidden", "true");
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 function closeModal() {

@@ -1,3 +1,5 @@
+let photographer, photos;
+
 async function createProfilCardDom() {
     // récupère l'id passé en paramètre
     let location = document.location;
@@ -7,7 +9,6 @@ async function createProfilCardDom() {
     const id = params.get("id")
     // si l'id existe dans l'url
     if (id) {
-        let photographer, photos;
         // récupère les données photographe
         await fetch('data/photographers.json')
             .then(function (response) {
@@ -32,9 +33,10 @@ async function createProfilCardDom() {
         profileSection.appendChild(profileCardDom[1]);
         profileSection.appendChild(profileCardDom[2]);
 
-        photos.forEach((photo) => {
-            // créer un objet photographerModel à partir de l'usine avec les données
-            const mediaModel = mediaFactory(photo);
+        photos.forEach((photo, index) => {
+            // créer un objet photographerModel à partir de l'usine avec les données et on passe
+            // aussi l'index de la photo dans le tableau
+            const mediaModel = mediaFactory(photo, index);
             // créer le html en mémoire : un tableau qui contient les deux div
             const photoCardDom = mediaModel.getPhotoCardDOM();
             // récupère la div photograph-header

@@ -86,14 +86,21 @@
     margin-top: 40px;
 }
 
-.photograph-photos figure img,video {
+.photograph-photos figure img {
     border-radius: 5px;
     object-fit: cover;
     width: 100%;
     height: inherit;
 }
 
-.photograph-photos figcaption {
+.photograph-photos figure video {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: inherit;
+}
+
+figcaption {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -196,4 +203,72 @@ form textarea {
     width: 100%;
     height: 120px;
     font-size: 36px;
+}
+
+#lightbox_modal {
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(196, 196, 196, 0.4);
+}
+
+#lightbox_modal header {
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+}
+
+#lightbox {
+    display: flex;
+}
+
+#lightbox figure {
+    width: 100%;
+    height: 100%;
+}
+
+#lightbox figure img {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 80vh;
+}
+
+#lightbox figure video {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 80vh;
+}
+
+
+.lightbox{
+    border: 2px solid #95FFF9;
+    background-color: #FFF;
+    margin: 20px;
+}
+
+.lightbox header img {
+    cursor: pointer;
+}
+
+.carrousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#previous {
+    margin-left: 20px;
+}
+
+#next {
+    margin-right: 20px;
 }
