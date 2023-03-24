@@ -47,3 +47,12 @@ const next = document.querySelector("#next");
 next.addEventListener("click",displayLightbox);
 
 const modalLightbox = document.getElementById("lightbox_modal");
+
+// event appuie sur une touche du clavier
+document.addEventListener("keyup", pressKey);
+
+function pressKey(e) {
+    if(modalLightbox.style.display == "block"){
+        "ArrowRight"
+    }
+}
