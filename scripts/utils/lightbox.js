@@ -9,9 +9,9 @@ function displayLightbox(e) {
     const photoCardDOM = modelMedia.getPhotoCardDOM();
 
     const lightbox = document.querySelector("#lightbox");
-    if(lightbox.hasChildNodes()){
-        lightbox.removeChild(lightbox.childNodes[0])
-    }
+    // méthode plus simple pour vider la lightbox
+    lightbox.innerHTML='';
+    // on met le html de la photo
     lightbox.appendChild(photoCardDOM);
     previous.dataset.key = index - 1; 
     // s'il n'y a plus d'image dans le tableau 
