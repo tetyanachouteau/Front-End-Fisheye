@@ -52,7 +52,16 @@ const modalLightbox = document.getElementById("lightbox_modal");
 document.addEventListener("keyup", pressKey);
 
 function pressKey(e) {
+    // si la lightbox est visible
     if(modalLightbox.style.display == "block"){
-        "ArrowRight"
+        // on appuie sur la fêche de droite
+        if(e.code === "ArrowRight"){
+            // on déclenche comme si on avait
+            // clicker sur ">"
+            next.click();
+        }
+        if(e.code === "ArrowLeft"){
+            previous.click();
+        }
     }
 }
