@@ -31,44 +31,44 @@
     </div>
   </main>
   <div id="contact_modal" aria-hidden="true">
-    <div class="modal">
+    <div class="modal" role="form">
       <header>
         <h2>Contactez-moi<br><span id="contactName"></span></h2>
-        <img src="assets/icons/close.svg" alt="Close button" aria-roledescription="Close button"
+        <img src="assets/icons/close.svg" role="button" alt="Close button" aria-roledescription="Close button"
           onclick="closeModal()" />
       </header>
       <form id="contactForm">
         <div>
           <label for="firstname">Prénom</label>
-          <input type="text" name="firstname" required />
+          <input type="text" name="firstname" placeholder="Prénom" required />
         </div>
         <div>
           <label for="lastname">Nom</label>
-          <input type="text" name="lastname" required />
+          <input type="text" name="lastname"  placeholder="Nom" required />
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="text" name="email" type="email" required />
+          <input type="text" name="email" type="email"  placeholder="Email" required />
         </div>
         <div>
           <label for="message">Votre message</label>
-          <textarea name="message" required></textarea>
+          <textarea name="message"  placeholder="Message" required></textarea>
         </div>
         <input class="contact_button" type="submit" value="Envoyer" />
       </form>
     </div>
   </div>
-  <div id="lightbox_modal" aria-hidden="true">
+  <div id="lightbox_modal" aria-hidden="true" role="dialog">
     <div class="lightbox">
       <header>
-        <img src="assets/icons/closeRed.svg" alt="Close button" aria-roledescription="Close button"
+        <img src="assets/icons/closeRed.svg" id="closeLightbox" role="button" alt="Close button" aria-roledescription="Close button"
           onclick="closeLightbox()" />
       </header>
       <div class="carrousel">
-        <img id="previous" src="assets/icons/flecheGauche.svg" alt="Previous" aria-roledescription="Previous image" />
+        <img id="previous" src="assets/icons/flecheGauche.svg" role="button" alt="Previous" aria-roledescription="Previous image" />
         <div id="lightbox">
         </div>
-        <img id="next" src="assets/icons/flecheDroite.svg" alt="Next" aria-roledescription="Next image" />
+        <img id="next" src="assets/icons/flecheDroite.svg" role="button" alt="Next" aria-roledescription="Next image" />
       </div>
     </div>
   </div>

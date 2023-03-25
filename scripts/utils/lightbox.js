@@ -34,6 +34,8 @@ function displayLightbox(e) {
     }
     modalLightbox.setAttribute("aria-hidden", "true");
     modalLightbox.style.display = "block";
+
+    document.querySelector("#closeLightbox").focus();
 }
 
 function closeLightbox() {
