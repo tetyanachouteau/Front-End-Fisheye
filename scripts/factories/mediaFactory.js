@@ -3,7 +3,7 @@ function mediaFactory(data, index) {
 
     const { id, photographerId, title, image, video, likes, date, price } = data;
 
-    function getPhotoCardDOM() {
+    function getPhotoCardDOM(isBig) {
         console.log("création de l'objet html dom");
         const figure = document.createElement('figure');
         if (image) {
@@ -15,20 +15,23 @@ function mediaFactory(data, index) {
             img.setAttribute("src", media);
             img.setAttribute("alt", title);
             // Pointeur fonction displayLightbox
-            // si pas de valeur d'index on est en adffichage unique
+            // si on a big alors on est dans l'affichage en grand
             // donc on ajoute pas l'evenement click
-            if (index)
+            if (!isBig)
                 img.addEventListener("click", displayLightbox);
             figure.appendChild(img);
         } else {
             const media = `assets/images/${photographerId}/${video}`;
             const videotag = document.createElement('video');
-            videotag.setAttribute("controls", "true");
+            if (isBig)
+                videotag.setAttribute("controls", "true");
             // grace au dataset on passe à la video son index dans le 
             // tableau des photos
             videotag.dataset.key = index;
             // Pointeur fonction displayLightbox
-            if (index)
+            // si on a big alors on est dans l'affichage en grand
+            // donc on ajoute pas l'evenement click
+            if (!isBig)
                 videotag.addEventListener("click", displayLightbox);
             const source = document.createElement("source");
             source.setAttribute("src", media);
