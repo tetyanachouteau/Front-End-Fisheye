@@ -40,6 +40,8 @@ async function createProfilCardDom() {
 
         const spanLikesTotal = document.querySelector("#total-likes");
         spanLikesTotal.textContent = totalLikes + " ♥"
+
+        document.querySelector("#contactName").textContent = photographer.name;
     } else {
         // si pas d'id on retourne sur la page d'acceuil
         document.location = "index.html";
