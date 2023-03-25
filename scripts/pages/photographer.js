@@ -1,4 +1,5 @@
 let photographer, photos;
+let totalLikes = 0;
 
 async function createProfilCardDom() {
     // récupère l'id passé en paramètre
@@ -43,7 +44,12 @@ async function createProfilCardDom() {
             const photosSection = document.querySelector(".photograph-photos");
             // ajout le html à la section
             photosSection.appendChild(photoCardDom);
+            // ajout les likes au total 
+            totalLikes += photo.likes;
         });
+
+        const spanLikesTotal = document.querySelector("#total-likes");
+        spanLikesTotal.textContent = totalLikes + " ♥"
     } else {
         // si pas d'id on retourne sur la page d'acceuil
         document.location = "index.html";
@@ -51,4 +57,4 @@ async function createProfilCardDom() {
 }
 //Mettre le code JavaScript lié à la page photographer.html
 
-createProfilCardDom()
+createProfilCardDom();

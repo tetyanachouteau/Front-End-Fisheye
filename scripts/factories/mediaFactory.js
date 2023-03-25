@@ -41,7 +41,9 @@ function mediaFactory(data, index) {
         const spanTitle = document.createElement('span');
         spanTitle.textContent = title;
         const spanLikes = document.createElement('span');
-        spanLikes.textContent = likes + " ♥";
+        spanLikes.textContent = likes + " ♡";
+        spanLikes.dataset.key = index;
+        spanLikes.addEventListener("click", addLike);
         figcaption.appendChild(spanTitle);
         figcaption.appendChild(spanLikes);
         figure.appendChild(figcaption);
@@ -51,4 +53,17 @@ function mediaFactory(data, index) {
     return { id, getPhotoCardDOM }
 
 
+}
+
+function addLike(e) {
+    const span = e.currentTarget;
+    if (span.textContent.indexOf("♡") >= 0) {
+        const index = span.dataset.key;
+        photos[index].likes++;
+        const likes = photos[index].likes;
+        span.textContent = likes + " ♥";
+        const spanLikesTotal = document.querySelector("#total-likes");
+        totalLikes++;
+        spanLikesTotal.textContent = totalLikes + " ♥";
+    }
 }

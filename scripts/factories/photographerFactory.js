@@ -57,7 +57,7 @@ function photographerFactory(data) {
         const photo = document.createElement('div');
         photo.className = 'photographer-photo';
         const img = document.createElement('img');
-        img.setAttribute("src", picture)
+        img.setAttribute("src", picture);
         img.setAttribute("alt", "Photo de " + name);
         photo.appendChild(img);
 
@@ -66,9 +66,10 @@ function photographerFactory(data) {
         const encart = document.createElement('div');
         encart.className = 'photographer-encart';
         const likes = document.createElement('span');
-        likes.textContent = "1000 ♥"
+        likes.id = "total-likes";
+        likes.textContent = "";
         const prix = document.createElement('span');
-        prix.textContent = price + "€/jour"
+        prix.textContent = price + "€/jour";
         encart.appendChild(likes);
         encart.appendChild(prix);
 
