@@ -46,7 +46,7 @@ function mediaFactory(data, index) {
         const spanLikes = document.createElement('span');
         spanLikes.textContent = likes + " ♡";
         spanLikes.dataset.key = index;
-        spanLikes.addEventListener("click", addLike);
+        spanLikes.addEventListener("click", manageLike);
         figcaption.appendChild(spanTitle);
         figcaption.appendChild(spanLikes);
         figure.appendChild(figcaption);
@@ -58,15 +58,30 @@ function mediaFactory(data, index) {
 
 }
 
-function addLike(e) {
+function manageLike(e) {
+    // récupère le like cliqué
     const span = e.currentTarget;
+    // on récupère l'index dans le tableau de photo de ce like
+    const index = span.dataset.key;
+    // on récupère le span qui contient l'info du nombre de likes total
+    const spanLikesTotal = document.querySelector("#total-likes");
+
+    // si le coeur est vide : il n'y avait pas de like donc on ajout un like
     if (span.textContent.indexOf("♡") >= 0) {
-        const index = span.dataset.key;
+        // on ajout des likes à l'image likée
         photos[index].likes++;
-        const likes = photos[index].likes;
-        span.textContent = likes + " ♥";
-        const spanLikesTotal = document.querySelector("#total-likes");
+        // on increment le total de like
         totalLikes++;
-        spanLikesTotal.textContent = totalLikes + " ♥";
+        // on met à jour l'affichage des likes de l'images
+        span.textContent = photos[index].likes + " ♥";
+    }else{
+        // on le retire 
+        photos[index].likes--;
+        totalLikes--;
+        // on met à jour l'affichage des likes de l'images
+        span.textContent = photos[index].likes + " ♡";
     }
+    
+    // on met à jour l'affichage du total de like
+    spanLikesTotal.textContent = totalLikes + " ♥";
 }
