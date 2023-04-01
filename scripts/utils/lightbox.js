@@ -65,5 +65,23 @@ function pressKey(e) {
         if(e.code === "ArrowLeft"){
             previous.click();
         }
+        if(e.code === "Escape"){
+            // on a appuyé sur Esc, la lightbox se ferme
+            closeLightbox();
+        }
+    }else if (modal.style.display == "flex"){
+        if(e.code === "Escape"){
+            // on a appuyé sur Esc, la modale de contact se ferme
+            closeModal();
+        }
+    }else {
+        if(e.code === "Escape"){
+            // on a appuyé sur Esc, la lightbox se ferme
+            window.location = './';
+        }
+        if(e.code === "Enter"){
+            // on a appuyé sur Enter, la modale de contact se ouvert
+            displayModal();
+        }
     }
 }

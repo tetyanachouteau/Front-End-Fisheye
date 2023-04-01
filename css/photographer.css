@@ -82,7 +82,7 @@
 }
 
 .photograph-photos figure {
-    width: 25%;
+    flex-basis: 25%;
     height: 250px;
     margin-top: 40px;
 }
@@ -111,6 +111,16 @@ figcaption {
     line-height: 31px;
 }
 
+.spanTitle {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.spanLikes {
+    min-width: 38px;
+}
+
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -135,11 +145,13 @@ figcaption {
 
 .photograph-filtrage select {
     background-color: #901C1C;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
     color: #FFF;
     height: 60px;
     width: 170px;
     border-radius: 5px;
+    padding-left: 20px;
 }
 
 .photograph-filtrage select:focus {

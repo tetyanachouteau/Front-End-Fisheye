@@ -42,8 +42,10 @@ function mediaFactory(data, index) {
 
         const figcaption = document.createElement("figcaption")
         const spanTitle = document.createElement('span');
+        spanTitle.className = "spanTitle";
         spanTitle.textContent = title;
         const spanLikes = document.createElement('span');
+        spanLikes.className = "spanLikes";
         spanLikes.textContent = likes + " ♡";
         spanLikes.dataset.key = index;
         spanLikes.addEventListener("click", manageLike);
