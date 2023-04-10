@@ -221,6 +221,18 @@ form textarea {
     font-size: 28px;
 }
 
+form input:focus {
+    border: 5px solid #3cd33c;
+}
+
+form textarea:focus {
+    border: 5px solid #7b3cd3;
+}
+
+form input[type='submit']:focus {
+    border: 5px solid #fff;
+}
+
 #lightbox_modal {
     display: none;
     position: fixed;
