@@ -47,7 +47,7 @@ async function init() {
     // recupérer la clé/objet photographers
     photographersData = (await getPhotographers()).photographers;
     displayData(photographersData);
-};
+}
 
 // event appuie sur une touche du clavier
 document.addEventListener("keyup", pressKey);

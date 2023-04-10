@@ -74,7 +74,7 @@ function displayPhotos() {
     });
 }
 
-function triageChange(e) {
+function triageChange() {
     if (document.querySelector("#pop").selected) {
         photos.sort((a, b) => b.likes - a.likes);
     } else if (document.querySelector("#date").selected) {
