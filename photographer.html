@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
       <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
     </div>
     <div class="photograph-filtrage">
-      Trier par :
+      <label for="triage">Trier par :</label>
       <select id="triage">
         <option selected id="pop">Popularité</option>
         <option id="date">Date</option>
@@ -39,20 +39,20 @@
       </header>
       <form id="contactForm">
         <div>
-          <label for="firstname">Prénom</label>
-          <input type="text" name="firstname" placeholder="Prénom" required />
+          <label for="firstname" tabindex="0">Prénom</label>
+          <input type="text" name="firstname" id="firstname" placeholder="Prénom" required />
         </div>
         <div>
           <label for="lastname">Nom</label>
-          <input type="text" name="lastname"  placeholder="Nom" required />
+          <input type="text" name="lastname" id="lastname" placeholder="Nom" required />
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="text" name="email" type="email"  placeholder="Email" required />
+          <input type="text" name="email"  id="email" type="email" placeholder="Email" required />
         </div>
         <div>
           <label for="message">Votre message</label>
-          <textarea name="message"  placeholder="Message" required></textarea>
+          <textarea name="message" id="message"  placeholder="Message" required></textarea>
         </div>
         <input class="contact_button" type="submit" value="Envoyer" />
       </form>
@@ -65,7 +65,7 @@
           onclick="closeLightbox()" />
       </header>
       <div class="carrousel">
-        <img id="previous" src="assets/icons/flecheGauche.svg" role="button" alt="Previous" aria-roledescription="Previous image" />
+        <img id="previous" src="assets/icons/flecheGauche.svg"  role="button" alt="Previous" aria-roledescription="Previous image" />
         <div id="lightbox">
         </div>
         <img id="next" src="assets/icons/flecheDroite.svg" role="button" alt="Next" aria-roledescription="Next image" />

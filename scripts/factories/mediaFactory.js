@@ -1,7 +1,7 @@
 function mediaFactory(data, index) {
     console.log("entrée dans la factory");
 
-    const { id, photographerId, title, image, video, likes, date, price } = data;
+    const { id, photographerId, title, image, video, likes } = data;
 
     function getPhotoCardDOM(isBig) {
         console.log("création de l'objet html dom");
@@ -13,7 +13,7 @@ function mediaFactory(data, index) {
             // tableau des photos
             img.dataset.key = index;
             img.setAttribute("src", media);
-            img.setAttribute("alt", title);
+            img.setAttribute("alt", "photo of " + title);
             // Pointeur fonction displayLightbox
             // si on a big alors on est dans l'affichage en grand
             // donc on ajoute pas l'evenement click
