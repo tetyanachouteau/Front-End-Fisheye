@@ -8,6 +8,8 @@ function photographerFactory(data) {
         console.log("création de l'objet html dom");
         const article = document.createElement('article');
         const img = document.createElement('img');
+        // ajoute le tabindex pour la nagivation par clavier
+        article.setAttribute("tabindex", "0");
         img.setAttribute("src", picture)
         img.setAttribute("alt", "Photo de " + name);
         const h2 = document.createElement('h2');

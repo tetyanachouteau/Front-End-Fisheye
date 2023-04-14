@@ -80,8 +80,10 @@ function pressKey(e) {
             window.location = './';
         }
         if(e.code === "Enter"){
-            // on a appuyé sur Enter, la modale de contact se ouvert
-            displayModal();
+            // Si on appuie sur enter, on cherche l'élément avec focus
+            // et on lance l'evenement click
+            if(document.activeElement)
+                document.activeElement.click();
         }
     }
 }

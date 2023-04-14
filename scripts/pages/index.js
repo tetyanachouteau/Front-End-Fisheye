@@ -61,6 +61,12 @@ function pressKey(e) {
         // on a appuyé sur Esc, la lightbox se ferme
         window.location = './photographer.html?id=' + photographersData[1].id;
     }
+    if(e.code === "Enter"){
+        // Si on appuie sur enter, on cherche l'élément avec focus
+        // et on lance l'evenement click
+        if(document.activeElement)
+            document.activeElement.click();
+    }
 }
 
 init();

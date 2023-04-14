@@ -17,8 +17,11 @@ function mediaFactory(data, index) {
             // Pointeur fonction displayLightbox
             // si on a big alors on est dans l'affichage en grand
             // donc on ajoute pas l'evenement click
-            if (!isBig)
+            if (!isBig){
                 img.addEventListener("click", displayLightbox);
+                // ajoute le tabindex pour la nagivation par clavier
+                img.setAttribute("tabindex", 0);
+            }
             figure.appendChild(img);
         } else {
             const media = `assets/images/${photographerId}/${video}`;
@@ -31,8 +34,11 @@ function mediaFactory(data, index) {
             // Pointeur fonction displayLightbox
             // si on a big alors on est dans l'affichage en grand
             // donc on ajoute pas l'evenement click
-            if (!isBig)
+            if (!isBig){
                 videotag.addEventListener("click", displayLightbox);
+                // ajoute le tabindex pour la nagivation par clavier
+                videotag.setAttribute("tabindex", 0);
+            }
             const source = document.createElement("source");
             source.setAttribute("src", media);
             source.setAttribute("type", "video/mp4");
@@ -48,7 +54,10 @@ function mediaFactory(data, index) {
         spanLikes.className = "spanLikes";
         spanLikes.textContent = likes + " ♡";
         spanLikes.dataset.key = index;
+        // si on click sur le coeur on lance la fonction managelike
         spanLikes.addEventListener("click", manageLike);
+        // ajoute le tabindex pour la nagivation par clavier
+        spanLikes.setAttribute("tabindex", 0);
         figcaption.appendChild(spanTitle);
         figcaption.appendChild(spanLikes);
         figure.appendChild(figcaption);
