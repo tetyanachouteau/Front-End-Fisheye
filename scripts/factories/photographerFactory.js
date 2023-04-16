@@ -9,6 +9,7 @@ function photographerFactory(data) {
         const article = document.createElement('article');
         const img = document.createElement('img');
         // ajoute le tabindex pour la nagivation par clavier
+        // pour donner le focus sur la vignette de photographe
         article.setAttribute("tabindex", "0");
         img.setAttribute("src", picture)
         img.setAttribute("alt", "Photo de " + name);

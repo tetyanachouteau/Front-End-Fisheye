@@ -74,10 +74,11 @@ function manageLike(e) {
     const span = e.currentTarget;
     // on récupère l'index dans le tableau de photo de ce like
     const index = span.dataset.key;
-    // on récupère le span qui contient l'info du nombre de likes total
+    // on récupère le span=endroit dans html qui contient l'info du nombre de likes total
     const spanLikesTotal = document.querySelector("#total-likes");
 
-    // si le coeur est vide : il n'y avait pas de like donc on ajout un like
+    //si  le coeur est vide () il n'y avait pas de like) donc on ajout un like
+    // sinon indexof retroune -1
     if (span.textContent.indexOf("♡") >= 0) {
         // on ajout des likes à l'image likée
         photos[index].likes++;
@@ -86,7 +87,7 @@ function manageLike(e) {
         // on met à jour l'affichage des likes de l'images
         span.textContent = photos[index].likes + " ♥";
     }else{
-        // on le retire 
+        // on le retire quand coeur est plein
         photos[index].likes--;
         totalLikes--;
         // on met à jour l'affichage des likes de l'images

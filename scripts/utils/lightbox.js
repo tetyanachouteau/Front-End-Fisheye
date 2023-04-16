@@ -6,8 +6,9 @@ function displayLightbox(e) {
     const data = photos[index];
     // on appelle l'usine de création du html de media pour l'ajouter dans la lightbox
     const modelMedia = mediaFactory(data);
+    //html image (image, titre, like)
     const photoCardDOM = modelMedia.getPhotoCardDOM(true);
-
+    //recure htmlid=ligthbox
     const lightbox = document.querySelector("#lightbox");
     // méthode plus simple pour vider la lightbox
     lightbox.innerHTML='';

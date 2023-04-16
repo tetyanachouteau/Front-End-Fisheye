@@ -50,8 +50,9 @@ async function createProfilCardDom() {
 //Mettre le code JavaScript lié à la page photographer.html
 
 createProfilCardDom();
-
+//=select html.
 const triage = document.querySelector("#triage");
+//change=choiser une option
 triage.addEventListener("change", triageChange);
 
 function displayPhotos() {
@@ -76,10 +77,19 @@ function displayPhotos() {
 
 function triageChange() {
     if (document.querySelector("#pop").selected) {
+        // just sort=tri basique. pas sur like encore
+        // () => {} function annonyme a -1 élément, b-2 élément
+        // à comparer, return nbr -=a est avant b, 0=quand a=b, nbr + quand a et après b.
+        //b.likes=12 - a.likes=3 = 9 
+        //on affiche du plus grand au plus petit et donc
+        //on enverce le calcule
+        //chiffres
         photos.sort((a, b) => b.likes - a.likes);
     } else if (document.querySelector("#date").selected) {
+        //pour comparer sous form de dates
         photos.sort((a, b) => new Date(b.date) - new Date(a.date));
     } else if (document.querySelector("#title").selected) {
+        //string
         photos.sort((a, b) => {
             if (a.title > b.title) {
                 return 1;
