@@ -5,7 +5,7 @@ function displayLightbox(e) {
     const index = parseInt(media.dataset.key);
     const data = photos[index];
     // on appelle l'usine de création du html de media pour l'ajouter dans la lightbox
-    const modelMedia = mediaFactory(data);
+    const modelMedia = mediaFactory(data,index);
     //html image (image, titre, like)
     const photoCardDOM = modelMedia.getPhotoCardDOM(true);
     //recure htmlid=ligthbox
