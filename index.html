@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn@Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,13 +19,53 @@
     </header>
 
     <main>
-        <!-- Contenu principal ici -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Bienvenue sur Learn@Home</h2>
+                <p>Apprendre ensemble, d'où que vous soyez!</p>
+                <a href="#inscription" class="btn-get-started">Commencer maintenant</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about-content">
+                <h2>À propos de Learn@Home</h2>
+                <p>Learn@Home est une association qui permet aux enfants en difficulté scolaire de recevoir un soutien scolaire à distance, grâce à l'aide de tuteurs bénévoles. Notre plateforme facilite la mise en relation des élèves qui ont besoin d'aide avec des tuteurs qualifiés et engagés.</p>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>Comment ça marche ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <img src="step1.png" alt="Étape 1">
+                    <p>Les élèves s'inscrivent sur notre site et indiquent les matières pour lesquelles ils ont besoin de soutien.</p>
+                </div>
+                <div class="step">
+                    <img src="step2.png" alt="Étape 2">
+                    <p>Les tuteurs bénévoles s'inscrivent également et indiquent les matières dans lesquelles ils peuvent aider.</p>
+                </div>
+                <div class="step">
+                    <img src="step3.png" alt="Étape 3">
+                    <p>Nos algorithmes intelligents mettent en relation les élèves et les tuteurs en fonction de leurs disponibilités et de leurs besoins.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inscription" class="get-started">
+            <h2>Commencez dès maintenant</h2>
+            <p>Rejoignez notre communauté d'entraide et bénéficiez d'un soutien scolaire de qualité. Inscrivez-vous en tant qu'élève ou tuteur dès aujourd'hui !</p>
+            <div class="cta-buttons">
+                <a href="#inscription-eleve" class="btn-get-started">Inscription Élève</a>
+                <a href="#inscription-tuteur" class="btn-get-started">Inscription Tuteur</a>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>Tous droits réservés © Learn@Home</p>
     </footer>
 
-    <script src="index.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
